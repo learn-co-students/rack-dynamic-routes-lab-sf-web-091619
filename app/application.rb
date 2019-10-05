@@ -10,7 +10,7 @@ class Application
         item_name = req.path.split("/items/").last
   
         item = @@items.find do |i|
-            i.name == item_name
+            i.name.match(item_name)
         end
   
         if item == nil
